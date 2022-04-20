@@ -19,13 +19,9 @@ public class TaxFunction {
 		
 		int tax = 0;
 		
-		if (numberOfMonthWorking > 12) {
-			System.err.println("More than 12 month working per year");
-		}
+		PrintMonthWorking(numberOfMonthWorking);
 		
-		if (numberOfChildren > 3) {
-			numberOfChildren = 3;
-		}
+		Children(numberOfChildren);
 		
 		if (isMarried) {
 			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - (54000000 + 4500000 + (numberOfChildren * 1500000))));
@@ -33,12 +29,28 @@ public class TaxFunction {
 			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - 54000000));
 		}
 		
+		PrintTax(tax);
+			 
+	}
+
+	private static void PrintMonthWorking (int numberOfMonthWorking) {
+		if (numberOfMonthWorking > 12) {
+			System.err.println("More than 12 month working per year");
+		}
+	}
+
+	private static void Children (int numberOfChildren) {
+		if (numberOfChildren > 3) {
+			numberOfChildren = 3;
+		}
+	}
+
+	private static void PrintTax (int tax) {
 		if (tax < 0) {
 			return 0;
 		}else {
 			return tax;
 		}
-			 
 	}
 	
 }
