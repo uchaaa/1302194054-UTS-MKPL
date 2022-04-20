@@ -16,15 +16,15 @@ public class Employee extends Child, DataEmployee {
 	private int otherMonthlyIncome;
 	private int annualDeductible;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, LocalDate dateJoined, boolean isForeigner, MacamGender gender) {
-		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNumber = idNumber;
-		this.address = address;
+	public Employee(DataEmployee staff, LocalDate dateJoined) {
+		this.setEmployeeId(DataEmployee.getEmployeeId());
+		this.setFirstName(DataEmployee.getFirstName());
+		this.setLastName(DataEmployee.getLastName());
+		this.setIdNumber(DataEmployee.getIdNumber());
+		this.setAddress(DataEmployee.getAddress());
 		this.dateJoined = dateJoined;
-		this.isForeigner = isForeigner;
-		this.gender = gender;
+		this.setForeigner(DataEmployee.isForeigner());
+		this.setGender(DataEmployee.getGender());
 
 		child = new LinkedList<Child>();
 	}
