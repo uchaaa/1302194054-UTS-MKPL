@@ -1,11 +1,11 @@
 package lib;
 
-public class Spouse extends Employee {
+public class Spouse extends DataEmployee {
 
     private String spouseName;
 	private String spouseIdNumber;
 
-    public Spouse (Employee employee)
+    public Spouse (DataEmployee employee)
     {
         super(
                 employee.getEmployeeId(),
