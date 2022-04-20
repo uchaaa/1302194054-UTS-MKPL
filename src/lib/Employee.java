@@ -5,25 +5,11 @@ import java.time.Month;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Employee extends Child {
-	private enum MacamGender{
-		PRIA,
-		PEREMPUAN
-	}
+public class Employee extends Child, DataEmployee {
 
-	//Data Employee
-	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
-	
 	private LocalDate dateJoined;
 	private int monthWorkingInYear;
-	
-	private boolean isForeigner;
-	private MacamGender gender; 
-	
+
 	private List<Child> child;
 
 	private int monthlySalary;
